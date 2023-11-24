@@ -1,0 +1,5 @@
+src/app/code/core/Mage/Widget/                                     app/code/core/Mage/Widget/
+src/app/design/adminhtml/default/default/layout/widget.xml         app/design/adminhtml/default/default/layout/widget.xml
+src/app/design/adminhtml/default/default/template/widget/          app/design/adminhtml/default/default/template/widget/
+src/app/etc/modules/Mage_Widget.xml                                app/etc/modules/Mage_Widget.xml
+src/app/locale/en_US/Mage_Widget.csv                               app/locale/en_US/Mage_Widget.csv
