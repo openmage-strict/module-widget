@@ -52,7 +52,7 @@
             </block>
         </reference>
         <reference name="js">
-            <block type="adminhtml/template" template="widget/instance/js.phtml" name="widget_instance_js"></block>
+            <block type="adminhtml/template" template="widget/instance/js.phtml" name="widget_instance_js"/>
         </reference>
     </adminhtml_widget_instance_edit>
 </layout>
