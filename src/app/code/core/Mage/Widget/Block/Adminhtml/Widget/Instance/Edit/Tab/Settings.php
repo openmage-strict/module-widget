@@ -84,7 +84,6 @@ class Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Tab_Settings extends Mage
      */
     protected function _prepareForm()
     {
-        $widgetInstance = $this->getWidgetInstance();
         $form = new Varien_Data_Form([
             'id' => 'edit_form',
             'action' => $this->getData('action'),
@@ -162,13 +161,13 @@ class Mage_Widget_Block_Adminhtml_Widget_Instance_Edit_Tab_Settings extends Mage
     /**
      * User-defined widgets sorting by Name
      *
-     * @param array $a
-     * @param array $b
+     * @param array $arrayA
+     * @param array $arrayB
      * @return int<-1, 1>
      */
-    protected function _sortWidgets($a, $b)
+    protected function _sortWidgets($arrayA, $arrayB)
     {
-        return strcmp($a['label'], $b['label']);
+        return strcmp($arrayA['label'], $arrayB['label']);
     }
 
     /**

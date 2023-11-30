@@ -124,6 +124,8 @@ class Mage_Widget_Block_Adminhtml_Widget_Chooser extends Mage_Adminhtml_Block_Te
      * Flag to indicate include hidden field before chooser or not
      *
      * @return bool
+     *
+     * @SuppressWarnings(PHPMD.BooleanGetMethodName)
      */
     public function getHiddenEnabled()
     {

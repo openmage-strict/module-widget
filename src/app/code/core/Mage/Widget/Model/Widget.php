@@ -18,6 +18,8 @@
  *
  * @category   Mage
  * @package    Mage_Widget
+ *
+ * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  */
 class Mage_Widget_Model_Widget extends Varien_Object
 {
@@ -78,6 +80,9 @@ class Mage_Widget_Model_Widget extends Varien_Object
      *
      * @param string $type Widget type
      * @return Varien_Object
+     *
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     public function getConfigAsObject($type)
     {
@@ -208,6 +213,8 @@ class Mage_Widget_Model_Widget extends Varien_Object
      * @param array $params Pre-configured Widget Params
      * @param bool $asIs Return result as widget directive(true) or as placeholder image(false)
      * @return string Widget directive ready to parse
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
     public function getWidgetDeclaration($type, $params = [], $asIs = true)
     {
@@ -281,26 +288,26 @@ class Mage_Widget_Model_Widget extends Varien_Object
     /**
      * User-defined widgets sorting by Name
      *
-     * @param array $a
-     * @param array $b
+     * @param array $arrayA
+     * @param array $arrayB
      * @return int<-1, 1>
      */
-    protected function _sortWidgets($a, $b)
+    protected function _sortWidgets($arrayA, $arrayB)
     {
-        return strcmp($a['name'], $b['name']);
+        return strcmp($arrayA['name'], $arrayB['name']);
     }
 
     /**
      * Widget parameters sort callback
      *
-     * @param Varien_Object $a
-     * @param Varien_Object $b
+     * @param Varien_Object $objectA
+     * @param Varien_Object $objectB
      * @return int
      */
-    protected function _sortParameters($a, $b)
+    protected function _sortParameters($objectA, $objectB)
     {
-        $aOrder = (int)$a->getData('sort_order');
-        $bOrder = (int)$b->getData('sort_order');
+        $aOrder = (int)$objectA->getData('sort_order');
+        $bOrder = (int)$objectB->getData('sort_order');
         return $aOrder < $bOrder ? -1 : ($aOrder > $bOrder ? 1 : 0);
     }
 }

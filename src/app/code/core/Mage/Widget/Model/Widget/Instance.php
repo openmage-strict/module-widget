@@ -31,6 +31,8 @@
  * @method $this setWidgetParameters(string $value)
  * @method int getSortOrder()
  * @method $this setSortOrder(int $value)
+ *
+ * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  */
 class Mage_Widget_Model_Widget_Instance extends Mage_Core_Model_Abstract
 {
@@ -82,7 +84,7 @@ class Mage_Widget_Model_Widget_Instance extends Mage_Core_Model_Abstract
             'notanchor_categories' => self::SINGLE_CATEGORY_LAYOUT_HANDLE,
             'all_products' => self::SINGLE_PRODUCT_LAYOUT_HANLDE,
         ];
-        foreach (Mage_Catalog_Model_Product_Type::getTypes() as $typeId => $type) {
+        foreach (array_keys(Mage_Catalog_Model_Product_Type::getTypes()) as $typeId) {
             $layoutHandle = str_replace('{{TYPE}}', $typeId, self::PRODUCT_TYPE_LAYOUT_HANDLE);
             $this->_layoutHandles[$typeId . '_products'] = $layoutHandle;
             $this->_specificEntitiesLayoutHandles[$typeId . '_products'] = self::SINGLE_PRODUCT_LAYOUT_HANLDE;
@@ -107,6 +109,9 @@ class Mage_Widget_Model_Widget_Instance extends Mage_Core_Model_Abstract
      * Processing object before save data
      *
      * @inheritDoc
+     *
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     protected function _beforeSave()
     {
@@ -480,6 +485,9 @@ class Mage_Widget_Model_Widget_Instance extends Mage_Core_Model_Abstract
      * @param string $blockReference
      * @param string $templatePath
      * @return string
+     *
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     public function generateLayoutUpdateXml($blockReference, $templatePath = '')
     {
