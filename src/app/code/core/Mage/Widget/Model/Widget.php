@@ -300,8 +300,8 @@ class Mage_Widget_Model_Widget extends Varien_Object
     /**
      * Widget parameters sort callback
      *
-     * @param Varien_Object $a
-     * @param Varien_Object $b
+     * @param Varien_Object $objectA
+     * @param Varien_Object $objectB
      * @return int
      */
     protected function _sortParameters($objectA, $objectB)
