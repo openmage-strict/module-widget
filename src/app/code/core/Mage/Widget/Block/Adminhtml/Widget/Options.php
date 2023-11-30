@@ -122,6 +122,9 @@ class Mage_Widget_Block_Adminhtml_Widget_Options extends Mage_Adminhtml_Block_Wi
      *
      * @param Varien_Object $parameter
      * @return Varien_Data_Form_Element_Abstract
+     *
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     protected function _addField($parameter)
     {

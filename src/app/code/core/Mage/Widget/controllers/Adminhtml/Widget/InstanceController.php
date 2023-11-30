@@ -18,6 +18,8 @@
  *
  * @category   Mage
  * @package    Mage_Widget
+ *
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
 class Mage_Widget_Adminhtml_Widget_InstanceController extends Mage_Adminhtml_Controller_Action
 {
@@ -319,6 +321,8 @@ class Mage_Widget_Adminhtml_Widget_InstanceController extends Mage_Adminhtml_Con
      * @param Mage_Widget_Model_Widget_Instance $widgetInstance
      * @param array $data
      * @return bool
+     *
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      */
     protected function _validatePostData($widgetInstance, $data)
     {

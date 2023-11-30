@@ -40,6 +40,8 @@ class Mage_Widget_Model_Resource_Widget_Instance_Collection extends Mage_Core_Mo
      * @param array|int $storeIds
      * @param bool $withDefaultStore if TRUE also filter by store id '0'
      * @return $this
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
     public function addStoreFilter($storeIds = [], $withDefaultStore = true)
     {

@@ -32,7 +32,7 @@ class Mage_Widget_Block_Adminhtml_Widget_Form extends Mage_Adminhtml_Block_Widge
             'legend'    => $this->helper('widget')->__('Widget')
         ]);
 
-        $select = $fieldset->addField('select_widget_type', 'select', [
+        $fieldset->addField('select_widget_type', 'select', [
             'label'                 => $this->helper('widget')->__('Widget Type'),
             'title'                 => $this->helper('widget')->__('Widget Type'),
             'name'                  => 'widget_type',
@@ -56,6 +56,7 @@ class Mage_Widget_Block_Adminhtml_Widget_Form extends Mage_Adminhtml_Block_Widge
      */
     protected function _getWidgetSelectOptions()
     {
+        $options = [];
         foreach ($this->_getAvailableWidgets(true) as $data) {
             $options[$data['type']] = $data['name'];
         }
@@ -70,10 +71,10 @@ class Mage_Widget_Block_Adminhtml_Widget_Form extends Mage_Adminhtml_Block_Widge
     protected function _getWidgetSelectAfterHtml()
     {
         $html = '<p class="nm"><small></small></p>';
-        $i = 0;
+        $count = 0;
         foreach ($this->_getAvailableWidgets(true) as $data) {
-            $html .= sprintf('<div id="widget-description-%s" class="no-display">%s</div>', $i, $data['description']);
-            $i++;
+            $html .= sprintf('<div id="widget-description-%s" class="no-display">%s</div>', $count, $data['description']);
+            $count++;
         }
         return $html;
     }
@@ -83,6 +84,8 @@ class Mage_Widget_Block_Adminhtml_Widget_Form extends Mage_Adminhtml_Block_Widge
      *
      * @param bool $withEmptyElement
      * @return array
+     *
+     * @SuppressWarnings(PHPMD.BooleanArgumentFlag)
      */
     protected function _getAvailableWidgets($withEmptyElement = false)
     {

@@ -251,15 +251,15 @@ class Mage_Widget_Model_Resource_Widget_Instance extends Mage_Core_Model_Resourc
     /**
      * Get store ids to which specified item is assigned
      *
-     * @param int $id
+     * @param int $storeId
      * @return array
      */
-    public function lookupStoreIds($id)
+    public function lookupStoreIds($storeId)
     {
         $adapter = $this->_getReadAdapter();
         $select = $adapter->select()
             ->from($this->getMainTable(), 'store_ids')
-            ->where("{$this->getIdFieldName()} = ?", (int)$id);
+            ->where("{$this->getIdFieldName()} = ?", (int)$storeId);
         $storeIds = $adapter->fetchOne($select);
         return $storeIds ? explode(',', $storeIds) : [];
     }
